@@ -37,7 +37,7 @@
             </dx:BootstrapGridViewTextColumn>
             <dx:BootstrapGridViewTextColumn FieldName="PostalCode" VisibleIndex="8">
             </dx:BootstrapGridViewTextColumn>
-            <dx:BootstrapGridViewTextColumn FieldName="Country" VisibleIndex="9">
+            <dx:BootstrapGridViewTextColumn FieldName="Country" PropertiesTextEdit-ClientInstanceName="Country" VisibleIndex="9">
             </dx:BootstrapGridViewTextColumn>
             <dx:BootstrapGridViewTextColumn FieldName="Phone" VisibleIndex="10">
             </dx:BootstrapGridViewTextColumn>
@@ -62,7 +62,7 @@
                         </dx:BootstrapTabPage>
 
 
-                        <dx:BootstrapTabPage Text="Weiterleitung" Visible="true">
+                        <dx:BootstrapTabPage Text="WeiterleitungXXXX" Visible="true">
 
                             <ContentCollection>
 
@@ -125,6 +125,7 @@
                                 </dx:ContentControl>
                             </ContentCollection>
                         </dx:BootstrapTabPage>
+
                         <dx:BootstrapTabPage Text="Tab3" Visible="true">
                             <ContentCollection>
                                 <dx:ContentControl runat="server">
