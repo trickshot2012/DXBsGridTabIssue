@@ -21,6 +21,7 @@ namespace DXWebApplication20 {
             BootstrapFormLayout BsFormL = tabPage.FindControl("FormLayoutDataBinding") as BootstrapFormLayout;
             BootstrapComboBox cb = BsFormL.FindControl("BootstrapComboBox1") as BootstrapComboBox;
             sLabel.Text= cb.SelectedItem.Text;
+            BootstrapGridView1.CancelEdit();
 
         }
     }
