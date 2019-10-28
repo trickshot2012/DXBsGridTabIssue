@@ -2,10 +2,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
     <br />
+    <dx:ASPxLabel ID="sLabel" runat="server"></dx:ASPxLabel>
     <dx:BootstrapGridView ID="BootstrapGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" KeyFieldName="CustomerID">
+        <ClientSideEvents EndCallback="function(s, e) {  
+            if (s.IsEditing()) {  
+		        var form = s.GetPopupEditForm();  
+		        form.Shown.AddHandler(function(s1,e1) {  
+	        Country.Focus();  
+		        });}  
+              }" />
+
         <Settings ShowGroupPanel="True" />
         <SettingsEditing Mode="PopupEditForm" />
-        <SettingsPopup>
+        <SettingsPopup EditForm-SettingsAdaptivity-MinWidth="1000px">
             <HeaderFilter MinHeight="140px"></HeaderFilter>
         </SettingsPopup>
         <SettingsDataSecurity AllowEdit="True" />
@@ -53,8 +62,6 @@
                         </dx:BootstrapTabPage>
 
 
-                        <%-- Due to problems getting the Combobox.Selecteditem in this area, switch back to first method --%>
-
                         <dx:BootstrapTabPage Text="Weiterleitung" Visible="true">
 
                             <ContentCollection>
@@ -64,35 +71,35 @@
                                         <Items>
                                             <dx:BootstrapLayoutGroup Caption="Weiterleiten an">
                                                 <Items>
-                                                    <dx:BootstrapLayoutItem Caption="anderen Mitarbeiter">
+                                                    <dx:BootstrapLayoutItem Caption="anderen Mitarbeiter" ColSpanMd="6">
                                                         <ContentCollection>
                                                             <dx:ContentControl>
+                                                                <dx:BootstrapComboBox ID="BootstrapComboBox1" runat="server">
+                                                                    <Items>
+                                                                        <dx:BootstrapListEditItem Text="V1" Value="1">
+                                                                        </dx:BootstrapListEditItem>
+                                                                        <dx:BootstrapListEditItem Text="V2" Value="2">
+                                                                        </dx:BootstrapListEditItem>
+                                                                        <dx:BootstrapListEditItem Text="V3" Value="3">
+                                                                        </dx:BootstrapListEditItem>
+                                                                    </Items>
+                                                                </dx:BootstrapComboBox>
+                                                                <br />
                                                             </dx:ContentControl>
+
                                                         </ContentCollection>
                                                     </dx:BootstrapLayoutItem>
-                                                    <dx:BootstrapLayoutItem ShowCaption="False" ColSpanMd="3">
+
+                                                    <dx:BootstrapLayoutItem ColSpanMd="3" ShowCaption="False">
                                                         <ContentCollection>
                                                             <dx:ContentControl>
-                                                                <dx:BootstrapButton ID="BootstrapButton2" Width="200" runat="server" AutoPostBack="false" Text="OK">
+                                                                <dx:BootstrapButton ID="BootstrapButton2" Width="100" runat="server" OnClick="BootstrapButton2_Click" AutoPostBack="false" UseSubmitBehavior="true" Text="OK">
                                                                 </dx:BootstrapButton>
                                                             </dx:ContentControl>
                                                         </ContentCollection>
                                                     </dx:BootstrapLayoutItem>
                                                 </Items>
-                                                <Items>
-                                                    <dx:BootstrapLayoutItem Caption="andere Abteilung">
-                                                        <ContentCollection>
-                                                            <dx:ContentControl>
-                                                            </dx:ContentControl>
-                                                        </ContentCollection>
-                                                    </dx:BootstrapLayoutItem>
-                                                    <dx:BootstrapLayoutItem ShowCaption="False" ColSpanMd="3">
-                                                        <ContentCollection>
-                                                            <dx:ContentControl>
-                                                            </dx:ContentControl>
-                                                        </ContentCollection>
-                                                    </dx:BootstrapLayoutItem>
-                                                </Items>
+
                                             </dx:BootstrapLayoutGroup>
                                         </Items>
                                     </dx:BootstrapFormLayout>
@@ -121,7 +128,7 @@
                         <dx:BootstrapTabPage Text="Tab3" Visible="true">
                             <ContentCollection>
                                 <dx:ContentControl runat="server">
-                             
+
                                     <div style="text-align: center">
                                         ccccc
                                     </div>

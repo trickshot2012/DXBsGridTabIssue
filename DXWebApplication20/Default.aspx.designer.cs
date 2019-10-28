@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DXWebApplication20 {
-    
-    
-    public partial class _Default {
-        
+namespace DXWebApplication20
+{
+
+
+    public partial class _Default
+    {
+
+        /// <summary>
+        /// sLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel sLabel;
+
         /// <summary>
         /// BootstrapGridView1 control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace DXWebApplication20 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.Bootstrap.BootstrapGridView BootstrapGridView1;
-        
+
         /// <summary>
         /// SqlDataSource2 control.
         /// </summary>
